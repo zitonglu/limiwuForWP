@@ -1,9 +1,8 @@
 <?php get_header(); ?>
-<div class="hidden-xs top"><a href="#top"><span class="glyphicon glyphicon-chevron-up"></span></a></div>
 <div class="container main">
 	<?php if (have_posts()): ?>
 		<?php while (have_posts()) : the_post(); ?>
-			<?php get_template_part('content'); ?>
+			<?php get_template_part('content','index'); ?>
 		<?php endwhile; ?>
 	<?php endif; ?>
 	<div class="col-sm-12 buttonbox">

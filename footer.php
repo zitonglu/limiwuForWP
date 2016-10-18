@@ -1,5 +1,5 @@
 <div class="footer">
-	<p class="container">Copyright&nbsp;©&nbsp;<a href="<?php site_url(); ?>" title="<?php bloginfo('name'); ?>-<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?>-<?php bloginfo('description'); ?></a>&nbsp;&nbsp;<?php echo get_option( 'zh_cn_l10n_icp_num' ); ?>&nbsp;
+	<p class="container">Copyright&nbsp;©&nbsp;<a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>-<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?>-<?php bloginfo('description'); ?></a>&nbsp;&nbsp;<?php echo get_option( 'zh_cn_l10n_icp_num' ); ?>&nbsp;
 	<!-- 站长统计代码 -->
 	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5614424'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D5614424' type='text/javascript'%3E%3C/script%3E"));</script>
 	<!-- 站长统计end -->

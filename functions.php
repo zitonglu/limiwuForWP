@@ -6,6 +6,10 @@
 function limiwu_setup() {
   // 开启发表文章时特殊图片功能
   add_theme_support('post-thumbnails');
+  // 开启发表文章时形式功能
+  add_theme_support( 'post-formats', array(
+    'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
+  ) );
   // 开启自定义导航功能
   register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'limiwu' )
@@ -14,7 +18,7 @@ function limiwu_setup() {
 add_action( 'after_setup_theme', 'limiwu_setup' );
 /**
 * 函数名称：limiwu_post_thumbnail_url
-* 函数作用：输出特殊图片中的图片链接地址
+* 函数作用：输出特殊图片中的图片链接地址(未使用)
  */
 function limiwu_post_thumbnail_url(){
 	global $post, $posts;
@@ -56,6 +60,30 @@ function post_views($before = '', $after = '', $echo = 1){
   $views = (int)get_post_meta($post_ID, 'views', true);
   if ($echo) echo $before, number_format($views), $after;
   else return $views;
+}
+/**
+* 函数名称：limiwu_comments_users();
+* 函数作用：获取文章评论次数
+* 用法：文章页面模版调用:<?php echo limiwu_comments_users($post->ID); ?>
+*       总评论数调用:<?php echo limiwu_comments_users($postid, 1); ?>
+*/
+function limiwu_comments_users($postid=0,$which=0) {
+  $comments = get_comments('status=approve&type=comment&post_id='.$postid);
+  if ($comments) {
+    $i=0; $j=0; $commentusers=array();
+    foreach ($comments as $comment) {
+      ++$i;
+      if ($i==1) { $commentusers[] = $comment->comment_author_email; ++$j; }
+      if ( !in_array($comment->comment_author_email, $commentusers) ) {
+        $commentusers[] = $comment->comment_author_email;
+        ++$j;
+      }
+    }
+    $output = array($j,$i);
+    $which = ($which == 0) ? 0 : 1;
+    return $output[$which]; 
+  }
+  return '发表评论';
 }
 /**
 * 函数名称：limiwu_get_previous_posts_link();
