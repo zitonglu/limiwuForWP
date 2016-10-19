@@ -142,6 +142,10 @@ pre{
   .onepic:focus{
     background:#8BC34A;
   }
+  .onepic:hover a p,
+  .onepic:focus a p{
+    color:#212121;
+  }
   .onepic:hover span,
   .onepic:hover span a{
     color:#fff;
@@ -172,7 +176,7 @@ pre{
   text-align:center;
   font-size:1.14em;
   font-weight:800;
-  color:#212121;
+  color:#555;
   margin-top:.4em;
 }
 @media (max-width: 767px){

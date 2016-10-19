@@ -10,7 +10,7 @@
 	</ul>
 </div>
 <div class="col-md-3 visible-lg visible-md erweima">
-	<img src="http://api.qrserver.com/v1/create-qr-code/?size=64x64&amp;data=http://www/paipk.com" alt="二维码">
+	<img src="http://api.qrserver.com/v1/create-qr-code/?size=64x64&amp;data=<?php echo get_permalink(); ?>" alt="二维码">
 	<p>打开微信，点击底部的“发现”，使用“扫一扫”即可将网页分享至朋友圈</p>
 </div>
 <div class="col-md-offset-2 col-md-8 article">
@@ -24,4 +24,6 @@
 	<a class="btn btn-blue hidden-xs btn-lg" href="#" role="button" data-toggle="modal" data-target="#myshare"><i class="glyphicon glyphicon-qrcode"></i>&nbsp;分享</a>
 	<a href="<?php echo get_permalink($next_post); ?>" class="btn btn-orange btn-lg" role="button">下一篇&nbsp;<i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
+<!-- 相同分类相关文章4图 -->
+<?php include (TEMPLATEPATH . '/template-parts/relatedarticles.php'); ?>
 <?php comments_template( '', true ); ?>

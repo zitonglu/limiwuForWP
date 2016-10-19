@@ -3,7 +3,7 @@
 		<?php if ( has_post_thumbnail() ) { ?>
 		<?php the_post_thumbnail(); ?>
 		<?php } else { ?>
-<img src="<?php bloginfo('template_url'); ?>/images/nopic.jpg" alt="<?php the_title(); ?>"/>
+<img src="<?php bloginfo('template_url'); ?>/images/nopic.jpg" alt="<?php the_title_attribute(); ?>"/>
 		<?php } ?> 
 		<p><?php the_title(); ?></p>
 	</a>
