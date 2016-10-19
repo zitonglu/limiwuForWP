@@ -17,7 +17,6 @@
 	<?php the_content(); ?>
 </div>
 <div class="clearfix"></div>
-<?php comments_template( '', true ); ?>
 <div class="container buttonbox">
 	<?php $prev_post = get_adjacent_post('','',ture);$next_post = get_adjacent_post('','',false); ?>
 	<a href="<?php echo get_permalink($prev_post); ?>" class="btn btn-yellowgreen btn-lg" role="button"><i class="glyphicon glyphicon-chevron-left"></i>&nbsp;上一篇</a>
@@ -25,3 +24,4 @@
 	<a class="btn btn-blue hidden-xs btn-lg" href="#" role="button" data-toggle="modal" data-target="#myshare"><i class="glyphicon glyphicon-qrcode"></i>&nbsp;分享</a>
 	<a href="<?php echo get_permalink($next_post); ?>" class="btn btn-orange btn-lg" role="button">下一篇&nbsp;<i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
+<?php comments_template( '', true ); ?>

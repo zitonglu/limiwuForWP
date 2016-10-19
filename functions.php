@@ -118,5 +118,28 @@ function limiwu_get_next_posts_link( $label = null, $max_page = 0 ) {
     echo '<a href="' . next_posts( $max_page, false ) . "\" $attr class=\"btn btn-orange btn-lg\" role=\"button\">" . preg_replace('/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label) . '</a>';
   }
 }
+/**
+* 函数名称：limiwu_comment();
+* 函数作用：输出评论的内容
+ */
+function limiwu_comment($comment, $args, $depth){
+   $GLOBALS['comment'] = $comment; ?>
+   <li class="media" id="li-comment-<?php comment_ID(); ?>">
+      <!-- 头像 -->
+      <a class="media-left" href="" rel="nofollow">
+        <?php if (function_exists('get_avatar') && get_option('show_avatars')) { echo get_avatar($comment, 64); } ?>
+      </a>
+      <div class="media-body">
+        <!-- 评论者名字 -->
+        <?php printf(__('<h4 class="media-heading">%s</h4>'), get_comment_author_link()); ?>
+        <!-- 评论内容 -->
+        <?php if ($comment->comment_approved == '0') : ?>
+          <P>你的评论正在审核，稍后会显示出来！</P>
+        <?php endif; ?>
+        <?php comment_text(); ?>
+        <p class="text-right">发表于：<?php echo get_comment_time('Y-m-d H:i'); ?>&nbsp;&nbsp;<?php comment_reply_link(array_merge( $args, array('reply_text' => '回复','depth' => $depth, 'max_depth' => $args['max_depth']))) ?>&nbsp;&nbsp;<?php edit_comment_link('修改'); ?></p>
+      </div>
+    </li>
+<?php }
 
 ?>
