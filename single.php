@@ -6,4 +6,7 @@
 		<?php endwhile; ?>
 	<?php endif; ?>
 </div>
+<?php if(get_option('limiwu_postAD3')!=''): ?>
+	<div class="postAD3"><?php echo get_option('limiwu_postAD3'); ?></div>
+<?php endif ?>
 <?php get_footer(); ?>

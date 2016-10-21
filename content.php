@@ -13,8 +13,12 @@
 	<img src="http://api.qrserver.com/v1/create-qr-code/?size=64x64&amp;data=<?php echo get_permalink(); ?>" alt="二维码">
 	<p>打开微信，点击底部的“发现”，使用“扫一扫”即可将网页分享至朋友圈</p>
 </div>
+<?php if(get_option('limiwu_postAD2')!=''): ?>
+	<div class="postAD2"><?php echo get_option('limiwu_postAD2'); ?></div>
+<?php endif ?>
 <div class="col-md-offset-2 col-md-8 article">
 	<?php the_content(); ?>
+	<?php echo get_option('limiwu_postAD1'); ?>
 </div>
 <div class="clearfix"></div>
 <div class="container buttonbox">

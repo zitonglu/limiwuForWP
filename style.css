@@ -503,3 +503,19 @@ p.title{
 .Commentbox .media-left img{
   border-radius:15px;
 }
+/*广告栏样式*/
+.postAD2{
+  overflow:hidden;
+  margin:0 auto 2em;
+  width:96%;
+}
+.indexAD1,
+.postAD3{
+  margin:1em auto;
+  padding:0;
+  max-width:960px;
+  overflow:hidden;
+}
+.indexAD2{
+  overflow:hidden;
+}
