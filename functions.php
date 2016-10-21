@@ -156,6 +156,8 @@ add_action('admin_menu', 'limiwu_ad_theme_setting');
 function limiwu_themeoptions_update(){
   update_option('limiwu_statscode', stripslashes($_POST['statscode']));
   update_option('limiwu_baidushare', stripslashes($_POST['baidushare']));
+  if ($_POST['if_relatedarticles']=='on'){$_POST['if_relatedarticles']='checked';} else {$_POST['if_relatedarticles']='';}
+  update_option('limiwu_if_relatedarticles', $_POST['if_relatedarticles']);
 }
 // 定义主题设置页面
 function limiwu_theme_setting(){ ?>  
@@ -170,8 +172,9 @@ function limiwu_theme_setting(){ ?>
     <hr>
     <h3>百度分享代码：</h3>
     <p><textarea type="text" name="baidushare" id="baidushare" cols="60" rows="3"><?php echo get_option('limiwu_baidushare'); ?></textarea></p>
-    <p>显示在文章“打赏”和“分享”按钮的弹出对话框中。</p>
+    <p>显示在文章"打赏"和"分享"按钮的弹出对话框中。</p>
     <hr>
+    <h4><input type="checkbox" name="if_relatedarticles" id="if_relatedarticles" <?php echo get_option('limiwu_if_relatedarticles'); ?> /> 关闭更多文章</h4>
     <select name ="colour">
     <?php $colour = get_option('mytheme_colour'); ?>
     <option value="gray" <?php if ($colour=='gray') { echo 'selected'; } ?>>灰色</option>

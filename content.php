@@ -25,5 +25,7 @@
 	<a href="<?php echo get_permalink($next_post); ?>" class="btn btn-orange btn-lg" role="button">下一篇&nbsp;<i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 <!-- 相同分类相关文章4图 -->
-<?php include (TEMPLATEPATH . '/template-parts/relatedarticles.php'); ?>
+<?php if(get_option('limiwu_if_relatedarticles')==''){
+	include (TEMPLATEPATH . '/template-parts/relatedarticles.php');
+} ?>
 <?php comments_template( '', true ); ?>
