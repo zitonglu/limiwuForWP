@@ -142,4 +142,45 @@ function limiwu_comment($comment, $args, $depth){
     </li>
 <?php }
 
+/**
+* 函数名称：limiwu_ad_theme_setting();
+* 函数作用：后台主题页面增加一个设置项，随主题一起开启
+ */
+function limiwu_ad_theme_setting(){
+  if($_POST['limiwu_update_themeoptions']=='true') {limiwu_themeoptions_update();}
+  add_theme_page('theme_setting', '主题设置', 'administrator', 'theme_setting','limiwu_theme_setting'); 
+  add_theme_page('explain', '主题说明', 'edit_themes', 'explain','explain_fun');
+}   
+add_action('admin_menu', 'limiwu_ad_theme_setting');
+// 后台中的定义函数
+function limiwu_themeoptions_update(){
+  update_option('limiwu_statscode', stripslashes($_POST['statscode']));
+  update_option('limiwu_baidushare', stripslashes($_POST['baidushare']));
+}
+// 定义主题设置页面
+function limiwu_theme_setting(){ ?>  
+<div class="wrap">
+  <h1>主题设置</h1>
+  <hr>
+  <form method="POST" action="">
+    <input type="hidden" name="limiwu_update_themeoptions" value="true" /><!-- 隐藏判断 -->
+    <h3>底部自定义代码：</h3>
+    <p><textarea type="text" name="statscode" id="baidushare" cols="60" rows="3"><?php echo get_option('limiwu_statscode'); ?></textarea></p>
+    <p>可设置底部统计代码，用于统计页面浏览次数。也可以插入其他需要插入的备注说明等。</p>
+    <hr>
+    <h3>百度分享代码：</h3>
+    <p><textarea type="text" name="baidushare" id="baidushare" cols="60" rows="3"><?php echo get_option('limiwu_baidushare'); ?></textarea></p>
+    <p>显示在文章“打赏”和“分享”按钮的弹出对话框中。</p>
+    <hr>
+    <select name ="colour">
+    <?php $colour = get_option('mytheme_colour'); ?>
+    <option value="gray" <?php if ($colour=='gray') { echo 'selected'; } ?>>灰色</option>
+    <option value="blue" <?php if ($colour=='blue') { echo 'selected'; } ?>>浅蓝</option>
+    <option value="pink" <?php if ($colour=='pink') { echo 'selected'; } ?>>粉红</option>
+    </select>
+    <p><input type="submit" name="submit" id="submit" class="button button-primary" value="保存更改"></p>
+  </form>
+</div>  
+<?php }   
+
 ?>
