@@ -33,6 +33,7 @@
 	}
 ?>	
 	</title>
+    <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico"/>
 	<link rel='stylesheet prefetch' href='http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css'>
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css?v=1.0" type="text/css" media="screen" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="<?php echo get_bloginfo('rss2_url'); ?>" />
