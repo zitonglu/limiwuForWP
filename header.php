@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
 <?php if ( is_home() ) {
-        bloginfo('name'); echo " - "; bloginfo('description');
+    bloginfo('name');echo " - ";bloginfo('description');
     } elseif ( is_category() ) {
         single_cat_title(); echo " - "; bloginfo('name');
     } elseif (is_single() || is_page() ) {

@@ -149,7 +149,6 @@ function limiwu_comment($comment, $args, $depth){
 function limiwu_ad_theme_setting(){
   if($_POST['limiwu_update_themeoptions']=='true') {limiwu_themeoptions_update();}
   add_theme_page('theme_setting', '主题设置', 'administrator', 'theme_setting','limiwu_theme_setting'); 
-  add_theme_page('explain', '主题说明', 'edit_themes', 'explain','explain_fun');
 }   
 add_action('admin_menu', 'limiwu_ad_theme_setting');
 // 后台中的定义函数

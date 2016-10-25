@@ -1,5 +1,4 @@
 <?php if(post_password_required()) {return;} ?>
-<div class="container Commentbox" id="comments">
 	<?php if(have_comments()): ?>
 <h3><i class="glyphicon glyphicon-comment"></i>&nbsp;评论留言</h3>
 		<ul class="media-list">
@@ -58,4 +57,3 @@ elseif ( get_option('comment_registration') && !is_user_logged_in() ) :
     <?php do_action('comment_form', $post->ID); ?>
 </form>
 <?php endif; ?>
-</div>

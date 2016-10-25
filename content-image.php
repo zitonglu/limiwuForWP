@@ -16,7 +16,7 @@
 <?php if(get_option('limiwu_postAD2')!=''): ?>
 	<div class="postAD2"><?php echo get_option('limiwu_postAD2'); ?></div>
 <?php endif ?>
-<div class="col-md-offset-2 col-md-8 article">
+<div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 article" id="content_image">
 	<?php the_content(); ?>
 	<?php echo get_option('limiwu_postAD1'); ?>
 </div>
