@@ -1,9 +1,9 @@
 /*
-Theme Name: limiwu
-Author:zitonglu
-Author URI: http://www.paipk.com;
-Description: this is a theme for limiwu.com
-Version: 1.0
+Theme Name:limiwu
+Author:紫铜炉
+Author URI:http://www.paipk.com;
+Description:这是由<a href="http://www.paipk.com" title="拍拍看科技" target="_blank">拍拍看科技</a>设计并制作的主题
+Version:1.2
 */
 ::selection{
   background:#8BC34A;
@@ -354,6 +354,11 @@ p.title{
 }
 @media (max-width:767px){
   p.title{font-size: 16px;}
+  p.title>a{
+    float: right;
+    font-size:.8em;
+    padding-top:.2em;
+  }
 }
 .single .meta{
   font-size:.92857em;

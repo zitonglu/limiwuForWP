@@ -1,4 +1,10 @@
 <?php
+//检测主题更新主题
+require_once(TEMPLATEPATH . '/theme-updates/theme-update-checker.php'); 
+  $wpdaxue_update_checker = new ThemeUpdateChecker(
+  'limiwu', //主题名字
+  'http://www.paipk.com/theme/limiwu/info.json'  //info.json 的访问地址
+);
 /**
 * 函数名称：limiwu_setup
 * 函数作用：主题加载时预加载一些wordpress自带的功能
