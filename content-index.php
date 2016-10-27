@@ -1,4 +1,4 @@
-<div class="col-md-4 col-sm-6 onepic" id="post-<?php the_ID(); ?>">
+<div class="col-md-3 col-sm-4 onepic" id="post-<?php the_ID(); ?>">
 	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 		<?php if ( has_post_thumbnail() ) { ?>
 		<?php the_post_thumbnail(); ?>

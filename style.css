@@ -3,7 +3,7 @@ Theme Name:limiwu
 Author:紫铜炉
 Author URI:http://www.paipk.com;
 Description:这是由<a href="http://www.paipk.com" title="拍拍看科技" target="_blank">拍拍看科技</a>设计并制作的主题
-Version:1.2
+Version:1.3
 */
 ::selection{
   background:#8BC34A;
@@ -156,31 +156,35 @@ pre{
   .onepic img,
   .RelatedArticlesbox img,
   .Commentbox .media-left img{
-    filter:sepia(.6);
+    filter:sepia(.3);
   }
   .onepic:hover img,
   .RelatedArticlesbox li:hover img,
   .Commentbox .media-left img:hover{
     filter:none;
   }
+  .onepic:hover img{
+    border-radius:8px;
+  }
 }
 .onepic>a>img{
   width:100%;
-  height:16.6em;
+  height:160px;
   object-fit:cover;
 }
 @media (min-width: 997px){
   .onepic:first-child{
-    width: 66.66666667%;
+    width:50%;
   }
 }
 .onepic>a>p{
   height:4.3em;
-  text-align:center;
-  font-size:1.14em;
-  font-weight:800;
+  font-size:14px;
+  font-weight:600;
   color:#555;
   margin-top:.4em;
+  padding-left:.5em;
+  padding-right:.5em;
 }
 @media (max-width: 767px){
   .onepic{
@@ -189,12 +193,12 @@ pre{
   .onepic>a>img{
     width:40%;
     height:7em;
+    border-radius:6px;
   }
   .onepic>a>p{
     max-height: 4.4em;
     overflow: hidden;
     width:56%;
-    text-align:left;
     float: right;
     margin-top:0;
   }
@@ -338,15 +342,11 @@ pre{
   padding:4px;
   margin-right:1em;
 }
-.single .article p{
-  font-size:1.14286em;
-  line-height:1.5;
-  margin-bottom:1.256em;
-}
 p.title{
   font-weight:700;
   font-size:24px;
   color:#212121;
+  line-height:1.5;
   margin-bottom:.5em;
 }
 @media (max-width:767px){
@@ -551,4 +551,13 @@ blockquote.aligncenter {
 }
 #content_image img{
   width: 100%;
+}
+.video-480x360{
+  max-width:480px;
+  margin:0 auto 1em;
+}
+@media (min-width:767px){
+  .video-480x360{height:360px;}
+  .video-left{height:505.5px;margin-top:1em;}
+  .video-right{margin-top:1em;}
 }

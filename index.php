@@ -5,7 +5,7 @@
 			<?php get_template_part('content','index'); ?>
 		<?php endwhile; ?>
 		<?php if(get_option('limiwu_indexAD2')!=''): ?>
-			<div class="col-md-4 col-sm-6 indexAD2"><?php echo get_option('limiwu_indexAD2'); ?></div>
+			<div class="col-md-3 col-sm-4 indexAD2"><?php echo get_option('limiwu_indexAD2'); ?></div>
 		<?php endif ?>
 	<?php endif; ?>
 	<div class="clearfix"></div>

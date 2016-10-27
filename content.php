@@ -11,6 +11,12 @@
 	<div class="postAD2"><?php echo get_option('limiwu_postAD2'); ?></div>
 <?php endif ?>
 <div class="col-md-offset-2 col-md-8 article">
+<?php $embed = get_post_meta(get_the_ID(), 'limiwu_video_embed', TRUE);
+    if($embed){ ?>
+	<div class="video-480x360">
+	<?php echo stripslashes(htmlspecialchars_decode($embed));?>
+	</div><!-- .entry-embed -->
+<?php } ?>
 	<?php the_content(); ?>
 	<?php echo get_option('limiwu_postAD1'); ?>
 </div>
